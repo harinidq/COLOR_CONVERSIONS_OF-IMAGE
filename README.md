@@ -49,7 +49,7 @@ Split and merge HSV Image
  ```
 import cv2
 image=cv2.imread('dog.jpg',1)
-cv2.imshow('sakthi',image)
+cv2.imshow('harini',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
  ```
