@@ -55,7 +55,8 @@ cv2.destroyAllWindows()
  ```
 
 ## Output:
-  ![Screenshot 2024-02-15 135726](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/f392ae14-d889-44ea-a995-0ac4f02ada84)
+![image](https://github.com/user-attachments/assets/3acd25bc-25fd-4fb4-83c4-4523af85d9d8)
+
 
 
 ### ii)Write the image                         
