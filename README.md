@@ -35,94 +35,93 @@ Split and Merge RGB Image
 ### Step10:
 Split and merge HSV Image
 
-##### Program:
-### Developed By: HARINI M D
-### Register Number: 212222230043
-
-
-
-
-### i) Read and display the image                  
-                                                      
- 
-  
- ```
+### Program:
+### Developed By:HARINI M D
+### Register Number:212222230043
+i) Read and display the image
+```
 import cv2
-image=cv2.imread('dog.jpg',1)
-cv2.imshow('harini',image)
+image=cv2.imread('harini.jpg',1)
+image = cv2.resize(image, (400, 300))
+cv2.imshow('harini md',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
- ```
+```
+
 
 ## Output:
-![image](https://github.com/user-attachments/assets/3acd25bc-25fd-4fb4-83c4-4523af85d9d8)
+
+### i) Read and display the image
+![Screenshot 2024-09-07 223035](https://github.com/user-attachments/assets/0e08c7f7-4e6c-4eb6-82c6-9b1496a60c2c)
 
 
 
-### ii)Write the image                         
-                                                      
- ```
-import cv2
-   image=cv2.imread('dog.jpg',0)
-   cv2.imwrite('d.jpg',image)
+<br>
+<br>
+
+### ii)Write the image
 ```
-## Output:
-  ![Screenshot 2024-02-15 205052](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/65bf2ab2-3200-4738-8b7c-7214838bd2da)
-
-      
-### iii)Shape of the Image                           
-                                                          
+ cv2.imwrite('b.jpg',image)
 ```
- import cv2
-    image=cv2.imread('dog.jpg',1)
-    print(image.shape)
+## OUTPUT:
+![Screenshot 2024-09-07 232541](https://github.com/user-attachments/assets/c7a7b1f5-2d69-4f6f-9c2d-d913610a3a8f)
+
+
+
+<br>
+<br>
+
+### iii)Shape of the Image
 ```
-## Output:
+print(image.shape)
+```
+## OUTPUT:
+![Screenshot 2024-09-07 232551](https://github.com/user-attachments/assets/21d981d8-4dfd-4c13-9e81-1912f31e8178)
 
-![Screenshot 2024-02-15 205157](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/67c8a66c-a100-422a-bb27-d3e297b9eaf3)
 
-                                                     
-### iv)Access rows and columns                    
-                                                       
+<br>
+<br>
+
+### iv)Access rows and columns
 ```
 import random
-    import cv2
-    image=cv2.imread('dog.jpg',1)
-    image=cv2.resize(image,(400,400))
-    for i in range (150,200):
-      for j in range(image.shape[1]):
-          image[i][j]=[random.randint(0,255),
-                       random.randint(0,255),
-                       random.randint(0,255)] 
-    cv2.imshow('part image',image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+image=cv2.resize(image,(400,400))
+for i in range (150,200):
+    for j in range(image.shape[1]):
+        image[i][j]=[random.randint(0,255),
+                     random.randint(0,255),
+                     random.randint(0,255)] 
+cv2.imshow('harini-1',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
+## OUTPUT:
+![Screenshot 2024-09-07 223201](https://github.com/user-attachments/assets/b1bcc08c-6713-41bf-abc0-d37dbabbf8c5)
 
-## Output:
 
-![Screenshot 2024-02-15 205549](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/975f545e-1ed9-4866-bde9-55bba58322a1)
+<br>
+<br>
 
- 
-### v)Cut and paste portion of image               
+### v)Cut and paste portion of image
 ```
-     import cv2
-     image=cv2.imread('dog.jpg',1)
-     image=cv2.resize(image,(400,400))
-     tag =image[150:200,110:160]
-     image[110:160,150:200] = tag
-     cv2.imshow('partimage1',image)
-     cv2.waitKey(0)
-     cv2.destroyAllWindows()
+image=cv2.imread('swathi.jpg',1)
+image=cv2.resize(image,(400,400))
+tag =image[130:200,110:190]
+image[110:180,120:200] = tag
+cv2.imshow('harini-2',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
- 
-## Output:
-  ![Screenshot 2024-02-15 192945](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/4bce6e90-1af4-4e1d-83c9-018a45ca4615)
+## OUTPUT:
+![Screenshot 2024-09-07 223336](https://github.com/user-attachments/assets/424c63d5-fc05-45e3-b4d5-b44c29153470)
 
-### vi) BGR and RGB to HSV and GRAY           
+
+<br>
+<br>
+
+### vi) BGR and RGB to HSV and GRAY
 ```
-import cv2
-img = cv2.imread('dog.jpg',1)
+img = cv2.imread('harini.jpg',1)
 img = cv2.resize(img,(300,200))
 cv2.imshow('Original Image',img)
 
@@ -141,43 +140,52 @@ cv2.imshow('RGB2GRAY',gray2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## OUTPUT:
+![Screenshot 2024-09-07 223529](https://github.com/user-attachments/assets/9b9dfbcf-7c8b-4101-9296-22b917cef838)
+![Screenshot 2024-09-07 223546](https://github.com/user-attachments/assets/b5e0b68f-e0c3-4e10-8e11-06d974f1879a)
 
-## Output:
-![Screenshot 2024-02-15 140206](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/bfc64452-f9c8-4abe-9982-31b896966ad7)![Screenshot 2024-02-15 140334](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/cd11adf1-a721-4252-b1c3-6bf72675bf6c)
-
-![Screenshot 2024-02-15 140314](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/ff6dc6b3-9372-44fa-b81f-a60ab9ca15f7)
-![Screenshot 2024-02-15 140252](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/473dbdc5-6f59-411b-bf86-188d3fabc858)
-
- ![Screenshot 2024-02-15 140228](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/344caec1-b527-4c8b-abda-8644bc621ce3)
-
+![Screenshot 2024-09-07 223601](https://github.com/user-attachments/assets/7246567a-1a28-4d5f-9438-e2402c02eb4d)
+![Screenshot 2024-09-07 223614](https://github.com/user-attachments/assets/3000e2e4-d6f6-4ffc-9b9d-c59632209d1c)
+![Screenshot 2024-09-07 223630](https://github.com/user-attachments/assets/a0bc9870-f9d5-421b-866a-ead217360e4e)
 
 
+
+
+
+<br>
+<br>
 
 ### vii) HSV to RGB and BGR
 ```
-import cv2
-img = cv2.imread('dog.jpg')
+img = cv2.imread('harini.jpg')
 img = cv2.resize(img,(300,200))
 img = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 cv2.imshow('Original HSV Image',img)
+
 RGB = cv2.cvtColor(img,cv2.COLOR_HSV2RGB)
 cv2.imshow('2HSV2BGR',RGB)
+
 BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
 cv2.imshow('HSV2RGB',BGR)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## Output:
-![Screenshot 2024-02-15 193353](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/69e07b00-bc24-4656-a5a8-bb45e224758f)![Screenshot 2024-02-15 193413](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/fe0c1c80-9141-4c3b-a06f-0c767b1b5205)
+## OUTPUT:
+![Screenshot 2024-09-07 223743](https://github.com/user-attachments/assets/5fe5559c-7e9c-4d72-bf3d-1ea5b8040b7a)
+![Screenshot 2024-09-07 223802](https://github.com/user-attachments/assets/8dfb15db-bc02-49eb-878f-81ddfe4b4188)
+![Screenshot 2024-09-07 223818](https://github.com/user-attachments/assets/71110843-c907-4e60-a3e2-33957256ded9)
 
-![Screenshot 2024-02-15 193437](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/a5476a64-d3e9-404f-bf3c-fcf50eebc360)
 
 
+
+
+<br>
+<br>
 
 ### viii) RGB and BGR to YCrCb
 ```
-import cv2
-img = cv2.imread('dog.jpg')
+img = cv2.imread('harini.jpg')
 img = cv2.resize(img,(300,200))
 cv2.imshow('Original RGB Image',img)
 
@@ -190,73 +198,80 @@ cv2.imshow('BGR-2-YCrCb',YCrCb2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## Output:
-![Screenshot 2024-02-15 193702](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/c53f3fe3-14fc-4acd-aff8-618be135e08f)
-![Screenshot 2024-02-15 193945](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/4be22ab3-c1e7-4c4b-b8fe-f67ac45a8751)
-![Screenshot 2024-02-15 193745](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/fd35d2d2-04f0-4e24-95a7-b7d5a5b3a467)
+## OUTPUT:
+![Screenshot 2024-09-07 223918](https://github.com/user-attachments/assets/2ca6bdea-73bb-4c5e-abd4-a423964bb3f4)
+![Screenshot 2024-09-07 223933](https://github.com/user-attachments/assets/a037170f-8ea1-41fb-94e6-55a5cff01cdc)
+![Screenshot 2024-09-07 223945](https://github.com/user-attachments/assets/b3228c30-cea6-4e64-ab93-d847479b3962)
 
+
+
+
+<br>
+<br>
 
 ### ix) Split and merge RGB Image
 ```
-import cv2
-img = cv2.imread('dog.jpg',1)
+img = cv2.imread('harini.jpg',1)
 img = cv2.resize(img,(300,200))
-
 R = img[:,:,2]
 G = img[:,:,1]
 B = img[:,:,0]
-
 cv2.imshow('R-Channel',R)
 cv2.imshow('G-Channel',G)
 cv2.imshow('B-Channel',B)
-
 merged = cv2.merge((B,G,R))
 cv2.imshow('Merged RGB image',merged)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-##  Output:
-![Screenshot 2024-02-15 194205](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/e1727a1e-d8f0-4f56-baf8-830d13ea6159)![Screenshot 2024-02-15 194148](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/8dbfe2d2-bd72-48a8-bdb5-ced617093eee)
+## OUTPUT:
+![Screenshot 2024-09-07 224049](https://github.com/user-attachments/assets/179af4b5-7d0d-430d-b1f5-ab496aa73099)
+![Screenshot 2024-09-07 224109](https://github.com/user-attachments/assets/3421dda3-e5a3-4012-b3a5-75cc35b252f8)
+![Screenshot 2024-09-07 224123](https://github.com/user-attachments/assets/2e7f2ba3-6812-4989-98c5-72efeb8dc6bd)
+![Screenshot 2024-09-07 224137](https://github.com/user-attachments/assets/c7d055ce-def8-48fb-894d-ed3e42736e8b)
 
-![Screenshot 2024-02-15 194115](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/7e861787-90c5-4592-8183-cabc7e5062d7)
-![Screenshot 2024-02-15 194130](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/8a37fe2d-bcb7-408e-b8f1-daa4fbd29860)
 
 
-
+<br>
+<br>
 
 ### x) Split and merge HSV Image
 ```
-import cv2
-img = cv2.imread("dog.jpg",1)
+img = cv2.imread("harini.jpg",1)
 img = cv2.resize(img,(300,200))
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
-
 H,S,V=cv2.split(img)
-
 cv2.imshow('Hue',H)
 cv2.imshow('Saturation',S)
 cv2.imshow('Value',V)
-
 merged = cv2.merge((H,S,V))
 cv2.imshow('Merged',merged)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## OUTPUT:
+![Screenshot 2024-09-07 224226](https://github.com/user-attachments/assets/84ced323-85df-4bed-9677-74ff480edd5f)
 
-## Ouput:
-![Screenshot 2024-02-15 194454](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/d0680c15-5755-4c0e-bca3-91176b831db5)![Screenshot 2024-02-15 194539](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/bd59bc4a-a0d6-46b5-addf-8821a2809fd6)
+![Screenshot 2024-09-07 224240](https://github.com/user-attachments/assets/4ab4e159-1ade-4dfa-8df5-397042f40230)
 
-![Screenshot 2024-02-15 194523](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/4a3ab9cf-1716-44e5-80de-3273b3d05117)
-![Screenshot 2024-02-15 194511](https://github.com/sakthivel005/COLOR_CONVERSIONS_OF-IMAGE/assets/120550359/f3114856-43fa-4934-9ebd-3525df522645)
+![Screenshot 2024-09-07 224250](https://github.com/user-attachments/assets/91e116bc-d11d-4a1d-97d2-a1eb0f90cfc2)
 
+![Screenshot 2024-09-07 224306](https://github.com/user-attachments/assets/ce835dc3-9735-4be6-bed6-aac22e001b64)
+
+
+<br>
+<br>
 
 
 
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed between RGB, HSV and YCbCr color models successfully using the python program.
+
+
+
+
+
 
 
 
