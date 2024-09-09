@@ -1,272 +1,361 @@
 # COLOR_CONVERSIONS_OF-IMAGE
 ## AIM
-To write a python program using OpenCV to do the following image manipulations.
+Write a Python program using OpenCV that performs the following tasks:
 
-i) Read, display, and write an image.
+i) Read and Display an Image.
 
-ii) Access the rows and columns in an image.
+ii) 	Draw Shapes and Add Text.
 
-iii) Cut and paste a small portion of the image.
+iii) Image Color Conversion.
 
-iv)To perform the color conversion between RGB, BGR, HSV, and YCbCr color models.
+iv) Access and Manipulate Image Pixels.
+
+v) Image Resizing
+
+vi) Image Cropping
+
+vii) Image Flipping
+
+viii)	Write and Save the Modified Image
 
 
 ## Software Required:
 Anaconda - Python 3.7
 ## Algorithm:
 ### Step1:
-Choose an image and save it as a filename.jpg ,
+Load an image from your local directory and display it.
 ### Step2:
-Use imread(filename, flags) to read the file.
-### Step3:
-Use imshow(window_name, image) to display the image.
-### Step4:
-Use imwrite(filename, image) to write the image.
-### Step5:
-End the program and close the output image windows.
-### Step6:
-Convert BGR and RGB to HSV and GRAY
-### Step7:
-Convert HSV to RGB and BGR
-### Step8:
-Convert RGB and BGR to YCrCb
-### Step9:
-Split and Merge RGB Image
-### Step10:
-Split and merge HSV Image
+o	Draw a line from the top-left to the bottom-right of the image.
+o	Draw a circle at the center of the image.
+o	Draw a rectangle around a specific region of interest in the image.
+o	Add the text "OpenCV Drawing" at the top-left corner of the image.
 
-### Program:
+### Step3:
+o	Convert the image from RGB to HSV and display it.
+o	Convert the image from RGB to GRAY and display it.
+o	Convert the image from RGB to YCrCb and display it.
+o	Convert the HSV image back to RGB and display it.
+
+### Step4:
+o	Access and print the value of the pixel at coordinates (100, 100).
+o	Modify the color of the pixel at (200, 200) to white.
+
+### Step5:
+o	Resize the original image to half its size and display it.
+### Step6:
+o	Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+### Step7:
+o	Flip the original image horizontally and display it.
+o	Flip the original image vertically and display it.
+
+### Step8:
+o	Save the final modified image to your local directory.
+
+
+##### Program:
 ### Developed By:HARINI M D
-### Register Number:212222230043
-i) Read and display the image
-```
-import cv2
-image=cv2.imread('harini.jpg',1)
-image = cv2.resize(image, (400, 300))
-cv2.imshow('harini md',image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
+### Register Number: 212222230043
 
 
 ## Output:
 
-### i) Read and display the image
-![Screenshot 2024-09-07 223035](https://github.com/user-attachments/assets/0e08c7f7-4e6c-4eb6-82c6-9b1496a60c2c)
-
-
-
-<br>
-<br>
-
-### ii)Write the image
+### i)Read and Display an Image
 ```
- cv2.imwrite('b.jpg',image)
-```
-## OUTPUT:
-![Screenshot 2024-09-07 232541](https://github.com/user-attachments/assets/c7a7b1f5-2d69-4f6f-9c2d-d913610a3a8f)
-
-
-
-<br>
-<br>
-
-### iii)Shape of the Image
-```
-print(image.shape)
-```
-## OUTPUT:
-![Screenshot 2024-09-07 232551](https://github.com/user-attachments/assets/21d981d8-4dfd-4c13-9e81-1912f31e8178)
-
-
-<br>
-<br>
-
-### iv)Access rows and columns
-```
-import random
-image=cv2.resize(image,(400,400))
-for i in range (150,200):
-    for j in range(image.shape[1]):
-        image[i][j]=[random.randint(0,255),
-                     random.randint(0,255),
-                     random.randint(0,255)] 
-cv2.imshow('harini-1',image)
+import cv2
+image=cv2.imread('dq.jpg',1)
+cv2.imshow('Image Window', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 223201](https://github.com/user-attachments/assets/b1bcc08c-6713-41bf-abc0-d37dbabbf8c5)
+![Screenshot 2024-09-09 160830](https://github.com/user-attachments/assets/05083cd0-f15b-4867-b4d2-b806c05d4cc4)
 
 
 <br>
 <br>
 
-### v)Cut and paste portion of image
+### ii)Draw Shapes and Add Text
+i)Draw a line from the top-left to the bottom-right of the image.
 ```
-image=cv2.imread('swathi.jpg',1)
-image=cv2.resize(image,(400,400))
-tag =image[130:200,110:190]
-image[110:180,120:200] = tag
-cv2.imshow('harini-2',image)
+import cv2
+img = cv2.imread("dq.jpg")
+res = cv2.line(img, (0, 0), (1029,686), (200, 100, 205), 10)
+cv2.imshow('Image Window', res)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+```
+![Screenshot 2024-09-09 161510](https://github.com/user-attachments/assets/8fe6f559-b304-401a-afbe-cb983bb182b5)
+
+
+ii)Draw a circle at the center of the image.
+```
+import cv2
+
+# Load the image
+img = cv2.imread("dq.jpg")
+
+# Get the dimensions of the image
+height, width, _ = img.shape
+
+# Calculate the center of the image
+center_coordinates = (width // 2, height // 2)
+
+# Draw a circle at the center of the image
+res = cv2.circle(img, center_coordinates, 150, (255, 0, 0), 10)
+
+# Display the image with the circle
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 223336](https://github.com/user-attachments/assets/424c63d5-fc05-45e3-b4d5-b44c29153470)
+![Screenshot 2024-09-09 161800](https://github.com/user-attachments/assets/cc67dd17-3945-49e6-8167-0c6ece986016)
 
 
-<br>
-<br>
-
-### vi) BGR and RGB to HSV and GRAY
+iii)Draw a rectangle around a specific region of interest in the image.
 ```
-img = cv2.imread('harini.jpg',1)
+import cv2
+
+img = cv2.imread("dq.jpg")
+start=(100,100)
+stop=(500,600)
+color=(100,255,100)
+thickness=10
+res_img=cv2.rectangle(img,start,stop,color,thickness)
+# Display the HSV image
+cv2.imshow('Image Window', res_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+![Screenshot 2024-09-09 162315](https://github.com/user-attachments/assets/9048bd88-e5c6-483f-8fae-aeba35b8606f)
+
+
+
+iv)Add the text "DULQUER" at the top-left corner of the image.
+```
+import cv2
+
+# Load the image
+img = cv2.imread("dq.jpg")
+
+# Define the text to be added and its position
+text = "DULQUER"
+position = (50, 50)  # Positioning the text at the top-left corner
+
+# Set the font, scale, color, and thickness of the text
+font = cv2.FONT_HERSHEY_SIMPLEX
+font_scale = 1
+color = (255, 255, 255)  # White color
+thickness = 2
+
+# Add the text to the image
+res = cv2.putText(img, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
+
+# Display the image with the text
+cv2.imshow('Image Window', res)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+![Screenshot 2024-09-09 162644](https://github.com/user-attachments/assets/eef01774-f4a3-42bf-b570-451deca69c4a)
+
+
+<br>
+<br>
+
+### iii)Image Color Conversion
+i)Convert the image from RGB to HSV and display it.
+```
+import cv2
+img = cv2.imread('dq.jpg',1)
 img = cv2.resize(img,(300,200))
 cv2.imshow('Original Image',img)
-
-hsv1 = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-cv2.imshow('BGR2HSV',hsv1)
-
 hsv2 = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 cv2.imshow('RGB2HSV',hsv2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+![Screenshot 2024-09-09 162723](https://github.com/user-attachments/assets/44f0acdf-d526-4e9b-a210-3589019d6b21)
+![Screenshot 2024-09-09 162733](https://github.com/user-attachments/assets/88d0b038-2696-4d8d-bd96-da0bd6b67867)
 
-gray1 = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-cv2.imshow('BGR2GRAY',gray1)
 
+ii.)Convert the image from RGB to GRAY and display it.
+```
+import cv2
+img = cv2.imread('dq.jpg',1)
+img = cv2.resize(img,(300,200))
+cv2.imshow('Original Image',img)
 gray2 = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
 cv2.imshow('RGB2GRAY',gray2)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 223529](https://github.com/user-attachments/assets/9b9dfbcf-7c8b-4101-9296-22b917cef838)
-![Screenshot 2024-09-07 223546](https://github.com/user-attachments/assets/b5e0b68f-e0c3-4e10-8e11-06d974f1879a)
+![Screenshot 2024-09-09 162818](https://github.com/user-attachments/assets/d09c8a0c-49a4-4096-a129-a72d6975677f)
+![Screenshot 2024-09-09 162829](https://github.com/user-attachments/assets/3c2af990-db70-4661-b17a-76e0fc6cf0af)
 
-![Screenshot 2024-09-07 223601](https://github.com/user-attachments/assets/7246567a-1a28-4d5f-9438-e2402c02eb4d)
-![Screenshot 2024-09-07 223614](https://github.com/user-attachments/assets/3000e2e4-d6f6-4ffc-9b9d-c59632209d1c)
-![Screenshot 2024-09-07 223630](https://github.com/user-attachments/assets/a0bc9870-f9d5-421b-866a-ead217360e4e)
-
-
-
-
-
-<br>
-<br>
-
-### vii) HSV to RGB and BGR
+iii.)Convert the image from RGB to YCrCb and display it.
 ```
-img = cv2.imread('harini.jpg')
+import cv2
+img = cv2.imread('dq.jpg',1)
 img = cv2.resize(img,(300,200))
-img = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-cv2.imshow('Original HSV Image',img)
-
-RGB = cv2.cvtColor(img,cv2.COLOR_HSV2RGB)
-cv2.imshow('2HSV2BGR',RGB)
-
-BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',BGR)
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-## OUTPUT:
-![Screenshot 2024-09-07 223743](https://github.com/user-attachments/assets/5fe5559c-7e9c-4d72-bf3d-1ea5b8040b7a)
-![Screenshot 2024-09-07 223802](https://github.com/user-attachments/assets/8dfb15db-bc02-49eb-878f-81ddfe4b4188)
-![Screenshot 2024-09-07 223818](https://github.com/user-attachments/assets/71110843-c907-4e60-a3e2-33957256ded9)
-
-
-
-
-
-<br>
-<br>
-
-### viii) RGB and BGR to YCrCb
-```
-img = cv2.imread('harini.jpg')
-img = cv2.resize(img,(300,200))
-cv2.imshow('Original RGB Image',img)
-
+cv2.imshow('Original Image',img)
 YCrCb1 = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
 cv2.imshow('RGB-2-YCrCb',YCrCb1)
-
-YCrCb2 = cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
-cv2.imshow('BGR-2-YCrCb',YCrCb2)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 223918](https://github.com/user-attachments/assets/2ca6bdea-73bb-4c5e-abd4-a423964bb3f4)
-![Screenshot 2024-09-07 223933](https://github.com/user-attachments/assets/a037170f-8ea1-41fb-94e6-55a5cff01cdc)
-![Screenshot 2024-09-07 223945](https://github.com/user-attachments/assets/b3228c30-cea6-4e64-ab93-d847479b3962)
+![Screenshot 2024-09-09 162902](https://github.com/user-attachments/assets/52b6792f-1bbc-4bff-b354-28efb510741d)
+![Screenshot 2024-09-09 162911](https://github.com/user-attachments/assets/c843cc16-261f-465c-82ce-efdfc59fb855)
 
 
-
-
-<br>
-<br>
-
-### ix) Split and merge RGB Image
+iv.)Convert the HSV image back to RGB and display it.
 ```
-img = cv2.imread('harini.jpg',1)
+import cv2
+img = cv2.imread('dq.jpg',1)
 img = cv2.resize(img,(300,200))
-R = img[:,:,2]
-G = img[:,:,1]
-B = img[:,:,0]
-cv2.imshow('R-Channel',R)
-cv2.imshow('G-Channel',G)
-cv2.imshow('B-Channel',B)
-merged = cv2.merge((B,G,R))
-cv2.imshow('Merged RGB image',merged)
+cv2.imshow('Original Image',img)
+BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
+cv2.imshow('HSV2RGB',BGR)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 224049](https://github.com/user-attachments/assets/179af4b5-7d0d-430d-b1f5-ab496aa73099)
-![Screenshot 2024-09-07 224109](https://github.com/user-attachments/assets/3421dda3-e5a3-4012-b3a5-75cc35b252f8)
-![Screenshot 2024-09-07 224123](https://github.com/user-attachments/assets/2e7f2ba3-6812-4989-98c5-72efeb8dc6bd)
-![Screenshot 2024-09-07 224137](https://github.com/user-attachments/assets/c7d055ce-def8-48fb-894d-ed3e42736e8b)
+![Screenshot 2024-09-09 163019](https://github.com/user-attachments/assets/a05d490a-936c-426e-b788-be3f9c5fa86b)
 
-
+![Screenshot 2024-09-09 163026](https://github.com/user-attachments/assets/7e84976c-ecfa-4c4a-949e-315028b467b3)
 
 <br>
 <br>
 
-### x) Split and merge HSV Image
+### iv)Access and Manipulate Image Pixels
 ```
-img = cv2.imread("harini.jpg",1)
+import cv2
+
+# Load and resize the image
+img = cv2.imread('dq.jpg', 1)
+img = cv2.resize(img, (300, 200))
+
+# Show the original image
+cv2.imshow('Original Image', img)
+
+# 1. Access and print the value of the pixel at coordinates (100, 100)
+pixel_value = img[100, 100]
+print(f"Pixel value at (100, 100): {pixel_value}")
+
+# 2. Modify the color of the pixel at (199, 199) to white
+img[199, 199] = [255, 255, 255]  # Setting the pixel value to white (BGR)
+
+# Display the modified image
+cv2.imshow('Modified Image', img)
+
+# Wait for a key press and close the windows
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+```
+![Screenshot (147)](https://github.com/user-attachments/assets/0d087bcd-eb88-4f08-a202-55d4cdfad17e)
+
+![Screenshot 2024-09-09 175700](https://github.com/user-attachments/assets/e5186feb-564b-421d-a0ad-6aaa79d1a01f)
+
+![Screenshot 2024-09-09 175711](https://github.com/user-attachments/assets/6bf33faa-2a22-4c45-8bb5-a13e74df3a5d)
+
+
+<br>
+<br>
+
+### v)Image Resizing
+```
+width=600
+height=800
+half_width=300
+half_height=400
+resized_img = cv2.resize(image, (300, 400))
+cv2.imshow('Original',image)
+cv2.imshow('resized',resized_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+![Screenshot (138)](https://github.com/user-attachments/assets/430eb402-6dc0-4a6b-b7bb-875b661edc89)
+
+
+<br>
+<br>
+
+### vi)Image Cropping
+```
+import cv2
+
+# Load the image
+image1=cv2.imread('dq.jpg',1)
+
+# Define the starting point and size of the ROI
+x, y = 50, 50
+width, height = 400, 400
+
+# Crop the ROI
+roi = image1[y:y + height, x:x + width]
+
+# Display the cropped ROI
+cv2.imshow('Cropped Image', roi)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+![Screenshot (142)](https://github.com/user-attachments/assets/e1729816-c5a5-4a4d-bd70-88ac7f481461)
+
+
+<br>
+<br>
+
+### vii)Image Flipping
+i.)Flip the original image horizontally and display it.
+```
+import cv2
+img = cv2.imread("dq.jpg")
 img = cv2.resize(img,(300,200))
-img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
-H,S,V=cv2.split(img)
-cv2.imshow('Hue',H)
-cv2.imshow('Saturation',S)
-cv2.imshow('Value',V)
-merged = cv2.merge((H,S,V))
-cv2.imshow('Merged',merged)
+res=cv2.rotate(img,cv2.ROTATE_180)
+cv2.imshow('Original',img)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-## OUTPUT:
-![Screenshot 2024-09-07 224226](https://github.com/user-attachments/assets/84ced323-85df-4bed-9677-74ff480edd5f)
+![Screenshot (143)](https://github.com/user-attachments/assets/c03d5c1e-4c6b-4366-a378-b627b33711f1)
 
-![Screenshot 2024-09-07 224240](https://github.com/user-attachments/assets/4ab4e159-1ade-4dfa-8df5-397042f40230)
+ii.)Flip the original image vertically and display it.
+```
+import cv2
 
-![Screenshot 2024-09-07 224250](https://github.com/user-attachments/assets/91e116bc-d11d-4a1d-97d2-a1eb0f90cfc2)
-
-![Screenshot 2024-09-07 224306](https://github.com/user-attachments/assets/ce835dc3-9735-4be6-bed6-aac22e001b64)
+img = cv2.imread("dq.jpg")
+img = cv2.resize(img,(300,200))
+res=cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
+# Display the HSV image
+cv2.imshow('Original',img)
+cv2.imshow('Image Window', res)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+![Screenshot (145)](https://github.com/user-attachments/assets/cc72ef58-d554-468d-bd47-14f750888823)
 
 
 <br>
 <br>
+
+### viii)Write and Save the Modified Image
+```
+ cv2.imwrite('dq.jpg',image)
+```
+![image](https://github.com/user-attachments/assets/a2ab057a-430d-492a-be5b-988cc0ccde5d)
+
+<br>
+<br>
+
+
 
 
 
 
 ## Result:
-Thus the images are read, displayed, and written ,and color conversion was performed between RGB, HSV and YCbCr color models successfully using the python program.
+Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
+
+
+
 
 
 
