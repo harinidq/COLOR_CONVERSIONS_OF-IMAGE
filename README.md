@@ -126,7 +126,8 @@ cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 162315](https://github.com/user-attachments/assets/9048bd88-e5c6-483f-8fae-aeba35b8606f)
+![image](https://github.com/user-attachments/assets/69d91f54-e41e-4856-92ce-10684732f686)
+
 
 
 
